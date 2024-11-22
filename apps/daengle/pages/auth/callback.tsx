@@ -1,9 +1,9 @@
-import Success from '~/pages/login/success';
+import Redirection from '~/pages/login/redirection';
 
 export default function Callback() {
   return (
     <div>
-      <Success />
+      <Redirection />
     </div>
   );
 }
