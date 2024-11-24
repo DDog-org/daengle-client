@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { instance } from '../axios';
+import { api } from '../api';
 
 const REST_API_KEY = process.env.NEXT_PUBLIC_REST_API_KEY;
 const REDIRECT_URI = process.env.NEXT_PUBLIC_REDIRECT_URI;
@@ -24,9 +24,9 @@ export const fetchKakaoAccessToken = async (code: string) => {
   }
 };
 
-export const sendAccessTokenToBackend = async (accessToken: string, loginType: string) => {
+export const postApiOauthKakao = async (accessToken: string, loginType: string) => {
   try {
-    await instance.post('/api/oauth/kakao', {
+    await api.post('/api/oauth/kakao', {
       kakaoAccessToken: accessToken,
       loginType: loginType,
     });

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { fetchKakaoAccessToken, sendAccessTokenToBackend } from '~/api/auth';
+import { fetchKakaoAccessToken, postApiOauthKakao } from '~/api/oauth';
 
 export default function Callback() {
   const router = useRouter();
@@ -14,7 +14,7 @@ export default function Callback() {
         const accessToken = await fetchKakaoAccessToken(code as string);
 
         // 액세스 토큰 백엔드한테 보내주기
-        await sendAccessTokenToBackend(accessToken, 'GROOMER');
+        await postApiOauthKakao(accessToken, 'GROOMER');
       } catch (error) {
         alert('로그인 실패. 다시 시도해주세요.');
       }
