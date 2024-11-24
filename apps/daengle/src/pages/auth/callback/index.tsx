@@ -6,18 +6,18 @@ export default function Callback() {
   const router = useRouter();
   const { code } = router.query || {};
 
-  const fetchKakaoAccessToken = useFetchKakaoAccessToken();
-  const postApiOauthKakao = usePostApiOauthKakao();
+  const { mutateAsync: fetchKakaoAccessToken } = useFetchKakaoAccessToken();
+
+  const { mutateAsync: postApiOauthKakao } = usePostApiOauthKakao();
 
   useEffect(() => {
     const handleAuthentication = async () => {
       if (!code) return;
-
       try {
         const accessToken = await fetchKakaoAccessToken(code as string);
 
         // 액세스 토큰 백엔드한테 보내주기
-        await postApiOauthKakao(accessToken, 'GROOMER');
+        await postApiOauthKakao({ accessToken, loginType: 'GROOMER' });
 
         alert('로그인 성공!');
         router.push('/home'); // 로그인 성공 시 홈으로 이동

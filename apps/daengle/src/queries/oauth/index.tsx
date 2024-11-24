@@ -1,6 +1,6 @@
-import { useMutation } from '@tanstack/react-query';
-import { fetchKakaoAccessToken, postApiOauthKakao } from '~/api/oauth';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import { QUERY_KEYS } from '../query-keys';
+import { fetchKakaoAccessToken, postApiOauthKakao } from '~/api/oauth';
 
 export const useFetchKakaoAccessToken = () => {
   return useMutation({
@@ -14,7 +14,6 @@ export const useFetchKakaoAccessToken = () => {
     },
   });
 };
-
 export const usePostApiOauthKakao = () => {
   return useMutation({
     mutationKey: QUERY_KEYS.POST_API_OAUTH_KAKAO,

@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { api } from '../api';
 
-const REST_API_KEY = process.env.NEXT_PUBLIC_REST_API_KEY;
-const REDIRECT_URI = process.env.NEXT_PUBLIC_REDIRECT_URI;
-const KAKAO_OAUTH_TOKEN_URL = process.env.NEXT_PUBLIC_KAKAO_OAUTH_TOKEN_URL;
+const REST_API_KEY = process.env.NEXT_PUBLIC_REST_API_KEY || '';
+const REDIRECT_URI = process.env.NEXT_PUBLIC_REDIRECT_URI || '';
+const KAKAO_OAUTH_TOKEN_URL = process.env.NEXT_PUBLIC_KAKAO_OAUTH_TOKEN_URL || '';
 
 export const fetchKakaoAccessToken = async (code: string) => {
   try {

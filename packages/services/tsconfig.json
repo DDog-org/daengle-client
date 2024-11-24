@@ -1,6 +1,7 @@
 {
   "extends": "@daengle/typescript-config/react-library.json",
   "compilerOptions": {
+    "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"]

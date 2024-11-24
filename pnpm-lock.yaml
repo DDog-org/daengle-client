@@ -11,6 +11,9 @@ importers:
       '@commitlint/format':
         specifier: ^19.5.0
         version: 19.5.0
+      '@tanstack/react-query':
+        specifier: ^5.61.0
+        version: 5.61.0(react@18.3.1)
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.6.0
@@ -106,6 +109,9 @@ importers:
       '@daengle/design-system':
         specifier: workspace:*
         version: link:../../packages/core/design-system
+      axios:
+        specifier: ^1.7.7
+        version: 1.7.7
       next:
         specifier: 14.2.10
         version: 14.2.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.81.0)
