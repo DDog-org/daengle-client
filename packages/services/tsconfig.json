@@ -7,6 +7,6 @@
     },
     "jsxImportSource": "@emotion/react"
   },
-  "include": ["src", "src/onboarding"],
+  "include": ["src", "src/onboarding", "src/types"],
   "exclude": ["node_modules"]
 }
