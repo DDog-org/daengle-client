@@ -1,5 +1,5 @@
 import React from 'react';
-import Arrow from '../../assets/images/arrow.svg';
+import Arrow from '../../../public/icons/header_arrow.svg';
 function Header() {
   return (
     <div>
