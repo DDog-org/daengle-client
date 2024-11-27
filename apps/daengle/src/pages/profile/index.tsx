@@ -1,48 +1,41 @@
 import Header from '~/components/profile/header';
-import Footer from '~/components/profile/footer';
 import {
-  wrapper,
-  container,
   profileImageWrapper,
-  profileImageBox,
   profileEditButtonBox,
-  title,
+  inputWrapper,
+  editButtonBox,
+  nickNameWrapper,
+  duplicateButtonBox,
 } from './index.styles';
-import myProfile from '../../../public/icons/profile_image.svg';
+import { Input, Layout, RoundButton, Text } from '@daengle/design-system';
+import Image from 'next/image';
 
 function profile() {
   return (
-    <div css={wrapper}>
-      <div css={container}>
-        <Header />
-        <h3>사용자 프로필 수정</h3>
-        <div css={profileImageWrapper}>
-          <img css={profileImageBox} src={myProfile} />
-          <span css={profileEditButtonBox}>프로필 사진 변경하기</span>
-        </div>
-        <div>
-          <section>
-            <div css={title}>닉네임</div>
-            <div>
-              <input type="text" />
-            </div>
-          </section>
-          <section>
-            <div css={title}>이름</div>
-            <div>
-              <input type="text" />
-            </div>
-          </section>
-          <section>
-            <div css={title}>휴대폰번호</div>
-            <div>
-              <input type="text" />
-            </div>
-          </section>
-        </div>
-        <Footer />
+    <Layout>
+      <Header />
+      <Text typo={'semibold01'} children={'사용자 정보 등록'} />
+      <div css={profileImageWrapper}>
+        <Image src="/icons/profile_image.svg" alt="프로필 이미지" width={116} height={116} />
+        <button css={profileEditButtonBox}>
+          <span>프로필 사진 변경하기</span>
+        </button>
       </div>
-    </div>
+      <div>
+        <section css={inputWrapper}>
+          <div css={nickNameWrapper}>
+            <Input label={'닉네임'} />
+            <button css={duplicateButtonBox}>중복검사</button>
+          </div>
+          <Input label={'이름'} disabled={true} />
+          <Input label={'휴대폰번호'} disabled={true} />
+          <Input label={'이메일'} disabled={true} />
+        </section>
+      </div>
+      <footer css={editButtonBox}>
+        <RoundButton variant={'primary'} size={'XL'} children={'수정하기'}></RoundButton>
+      </footer>
+    </Layout>
   );
 }
 

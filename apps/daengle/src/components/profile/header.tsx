@@ -1,9 +1,8 @@
-import React from 'react';
-import Arrow from '../../../public/icons/header_arrow.svg';
+import Image from 'next/image';
 function Header() {
   return (
     <div>
-      <img src={Arrow} />
+      <Image src="icons/header_arrow.svg" alt="뒤로가기 아이콘" width={24} height={12} />
     </div>
   );
 }
