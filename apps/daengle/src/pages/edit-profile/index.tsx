@@ -5,7 +5,6 @@ import {
   inputWrapper,
   nickNameWrapper,
   duplicateButtonBox,
-  readOnlyTextBox,
 } from './index.styles';
 import { AppBar, Input, Layout, RoundButton, Text } from '@daengle/design-system';
 import Image from 'next/image';
@@ -28,24 +27,9 @@ export default function EditProfile() {
               <Input label={'닉네임'} errorMessage="이미 존재하는 닉네임입니다." />
               <button css={duplicateButtonBox}>중복검사</button>
             </div>
-            <div css={readOnlyTextBox}>
-              <Text typo={'subtitle3'}>이름</Text>
-              <Text typo={'body3'} color="gray400">
-                김윤일
-              </Text>
-            </div>
-            <div css={readOnlyTextBox}>
-              <Text typo={'subtitle3'}>휴대폰번호</Text>
-              <Text typo={'body3'} color="gray400">
-                010-3386-9888
-              </Text>
-            </div>
-            <div css={readOnlyTextBox}>
-              <Text typo={'subtitle3'}>이메일</Text>
-              <Text typo={'body3'} color="gray400">
-                kyoul10121@naver.com
-              </Text>
-            </div>
+            <Input label={'이름'} disabled={true} />
+            <Input label={'휴대폰번호'} disabled={true} />
+            <Input label={'이메일'} disabled={true} />
           </section>
         </div>
         <footer>
