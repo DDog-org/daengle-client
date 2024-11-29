@@ -24,7 +24,7 @@ export default function EditProfile() {
         <div>
           <section css={inputWrapper}>
             <div css={nickNameWrapper}>
-              <Input label={'닉네임'} errorMessage="이미 존재하는 닉네임입니다." />
+              <Input label="닉네임" errorMessage="이미 존재하는 닉네임입니다." />
               <button css={duplicateButtonBox}>중복검사</button>
             </div>
             <Input label={'이름'} disabled={true} />
@@ -33,7 +33,7 @@ export default function EditProfile() {
           </section>
         </div>
         <footer>
-          <RoundButton variant={'primary'} size={'L'} fullWidth={true}>
+          <RoundButton variant="primary" size="L" fullWidth={true}>
             수정하기
           </RoundButton>
         </footer>
