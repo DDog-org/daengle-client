@@ -13,8 +13,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "./src/libs/libs.d.ts",
-    "../../packages/services/src/hooks/use-funnel/use-funnel.tsx"
+    "./src/libs/libs.d.ts"
   ],
   "exclude": ["node_modules"]
 }
