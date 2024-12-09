@@ -21,6 +21,7 @@ export function AddInput({ title, placeholder, height, value, onChange }: Props)
         <textarea
           css={[textarea, height && { minHeight: `${height}px` }]}
           placeholder={placeholder}
+          maxLength={400}
           value={value}
           onChange={onChange}
         />

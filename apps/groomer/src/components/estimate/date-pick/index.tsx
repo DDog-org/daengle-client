@@ -42,9 +42,6 @@ export function DatePick({ onChange, placeholderText, isEditable }: Props): JSX.
                 : undefined
             : startOfDay
         }
-        maxDateTime={
-          selectedDate?.isSame(now, 'day') && now.isAfter(endOfDay) ? undefined : endOfDay
-        }
         disabled={!isEditable}
         ampm={false}
         slotProps={{

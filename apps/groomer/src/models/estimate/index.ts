@@ -25,3 +25,13 @@ export interface GetGroomerEstimateDetailResponse {
 export interface GetGroomerEstimateDetailParams {
   id: number;
 }
+
+export interface PostGroomerEstimateBody {
+  id: number;
+  reservedDate: string;
+  overallOpinion: string;
+}
+
+export interface PostGroomerEstimateResponse {
+  isRegistered: boolean;
+}

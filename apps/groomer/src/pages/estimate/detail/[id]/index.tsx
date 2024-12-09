@@ -2,11 +2,26 @@ import { useState } from 'react';
 import { Dayjs } from 'dayjs';
 import { AddInput, PetDetails, Section, UserProfile } from '@daengle/services/components';
 import { AppBar, Layout, RoundButton, Text, theme } from '@daengle/design-system';
-import { useGroomerEstimateDetailQuery } from '~/queries';
+import { useGetGroomerEstimateDetailQuery, usePostGroomerEstimateMutation } from '~/queries';
 import { DatePick } from '~/components/estimate';
 import { useRouter } from 'next/router';
 import { GetGroomerEstimateDetailParams } from '~/models/estimate';
 import { css } from '@emotion/react';
+import { QUERY_KEYS } from '~/queries/query-keys';
+import { queryClient } from '@daengle/services/providers';
+
+function formatDate(dateString: string): string {
+  const date = new Date(dateString);
+
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  const seconds = String(date.getSeconds()).padStart(2, '0');
+
+  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
 
 export default function EstimateDetail() {
   const router = useRouter();
@@ -17,7 +32,9 @@ export default function EstimateDetail() {
   const groomingEstimateId = Number(id);
 
   const params: GetGroomerEstimateDetailParams = { id: groomingEstimateId };
-  const { data, isLoading, error } = useGroomerEstimateDetailQuery(params);
+  const { data, isLoading, error } = useGetGroomerEstimateDetailQuery(params);
+
+  const mutation = usePostGroomerEstimateMutation();
 
   if (isLoading) return <div>Loading...</div>;
   if (error || !data) return <div>데이터를 불러오지 못했습니다.</div>;
@@ -33,9 +50,60 @@ export default function EstimateDetail() {
   };
 
   const handleReservation = () => {
-    if (!selectedDateTime || !overallOpinion) {
-      alert('날짜와 요청 사항을 입력해주세요.');
+    if (!overallOpinion) {
+      alert('추가 요청 사항을 입력해주세요.');
       return;
+    }
+
+    const formattedDate = selectedDateTime
+      ? formatDate(new Date(selectedDateTime.toString()).toISOString())
+      : formatDate(petData.reservedDate);
+
+    if (isEditable && !selectedDateTime) {
+      if (!selectedDateTime) {
+        alert('날짜를 선택해주세요.');
+        return;
+      }
+
+      const body = {
+        id: groomingEstimateId,
+        reservedDate: formattedDate,
+        overallOpinion,
+      };
+
+      mutation.mutate(body, {
+        onSuccess: (data) => {
+          if (data.isRegistered) {
+            alert('요청 사항이 성공적으로 전송되었습니다.');
+          }
+          queryClient.invalidateQueries({ queryKey: QUERY_KEYS.GET_GROOMER_ESTIMATE_LIST });
+
+          router.back();
+        },
+        onError: () => {
+          alert('요청 사항 전송에 실패했습니다.');
+        },
+      });
+    } else {
+      const body = {
+        id: groomingEstimateId,
+        reservedDate: formattedDate,
+        overallOpinion,
+      };
+
+      mutation.mutate(body, {
+        onSuccess: (data) => {
+          if (data.isRegistered) {
+            alert('요청 사항이 성공적으로 전송되었습니다.');
+          }
+          queryClient.invalidateQueries({ queryKey: QUERY_KEYS.GET_GROOMER_ESTIMATE_LIST });
+
+          router.back();
+        },
+        onError: () => {
+          alert('요청 사항 전송에 실패했습니다.');
+        },
+      });
     }
   };
 
