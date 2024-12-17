@@ -13,6 +13,7 @@ export interface GetUserReservationGroomingDetailRequestParams {
 }
 
 export interface GetUserReservationGroomingDetailResponse {
+  reservationId: number;
   groomingEstimateId: number;
   groomerId: number;
   imageUrl: string;
@@ -34,6 +35,7 @@ export interface GetUserReservationCareDetailRequestParams {
 }
 
 export interface GetUserReservationCareDetailResponse {
+  reservationId: number;
   careEstimateId: number;
   vetId: number;
   imageUrl: string;

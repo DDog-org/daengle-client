@@ -16,16 +16,17 @@ import {
   useUserReservationCareDetailQuery,
   useUserReservationGroomingDetailQuery,
 } from '~/queries/reservation';
+import { ROUTES } from '~/constants/commons';
 
 type DetailData = GetUserReservationGroomingDetailResponse | GetUserReservationCareDetailResponse;
 
 export default function Detail() {
   const router = useRouter();
-  const { id, tab } = router.query;
+  const { id, service } = router.query;
   const estimateId = Number(id);
 
-  const isGrooming = tab === 'groomer';
-  const isCare = tab === 'vet';
+  const isGrooming = service === 'groomer';
+  const isCare = service === 'vet';
 
   const groomingParams: GetUserReservationGroomingDetailRequestParams = {
     estimateId: estimateId,
@@ -78,12 +79,21 @@ export default function Detail() {
 
     return (
       <Layout isAppBarExist={false}>
-        <AppBar />
+        <AppBar
+          backgroundColor={theme.colors.background}
+          onBackClick={() => {
+            router.back;
+          }}
+          onHomeClick={() => router.push(ROUTES.HOME)}
+        />
         <div css={wrapper}>
           <div css={header}>
             <Text typo="title1">견적 상세</Text>
           </div>
-          <PartnersInfo profile={designerData} />
+          <PartnersInfo
+            profile={designerData}
+            onClick={() => router.push(ROUTES.GROOMER_SHOP_DETAIL(detailData.shopId))}
+          />
           <section css={section}>
             <Text typo="body1">소개</Text>
             <Text typo="body10" tag="div">
@@ -128,7 +138,13 @@ export default function Detail() {
     };
     return (
       <Layout isAppBarExist={false}>
-        <AppBar />
+        <AppBar
+          backgroundColor={theme.colors.background}
+          onBackClick={() => {
+            router.back;
+          }}
+          onHomeClick={() => router.push(ROUTES.HOME)}
+        />
         <div css={wrapper}>
           <div css={header}>
             <Text typo="title1">진료 상세</Text>
@@ -144,7 +160,7 @@ export default function Detail() {
             items={[
               { title: '지역', receipt: detailData.address },
               { title: '일정', receipt: formattedDate, hasLine: true, addTitle: '종합소견' },
-              { title: '추정 병명', receipt: detailData.cause },
+              { title: '추정 병명', receipt: detailData.diagnosis },
               { title: '추정 원인', receipt: detailData.cause },
               {
                 title: '예상 진료',

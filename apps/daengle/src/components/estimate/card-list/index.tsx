@@ -14,6 +14,7 @@ import {
 } from './index.styles';
 import { DefaultProfile } from '@daengle/design-system/icons';
 import { UserEstimateGeneralGroomingType } from '~/interfaces/estimate';
+import dayjs from 'dayjs';
 
 interface Props {
   mode: 'general' | 'designation';
@@ -52,7 +53,7 @@ export function CardList({ mode, category, estimateData, onCardClick }: Props): 
                 {item.shopName || (category === 'vet' ? '' : '미용실 정보 없음')}
               </Text>
               <Text typo="body12" color="gray600">
-                {item.reservedDate}
+                {dayjs(item.reservedDate).locale('ko').format('YYYY.MM.DD(ddd) • HH:mm')}
               </Text>
               <div css={tagsContainer}>
                 {item.keywords?.map((keyword) => (

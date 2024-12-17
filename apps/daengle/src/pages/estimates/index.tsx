@@ -20,29 +20,18 @@ const TABS = [
 ];
 export default function EstimateList() {
   const router = useRouter();
-  const { tab, isDesignation: isDesignationQuery } = router.query;
+  const { service, isDesignation: isDesignationQuery } = router.query;
   const isDesignation = isDesignationQuery === 'true';
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    if (router.isReady && !tab) {
+    if (router.isReady && !service) {
       router.replace({
         pathname: '/estimates',
-        query: { tab: 'groomer', isDesignation: 'false' },
+        query: { service: 'groomer', isDesignation: 'false' },
       });
     }
   }, [router.isReady]);
-
-  const handleTabChange = (activeTabId: string) => {
-    router.push(
-      {
-        pathname: '/estimates',
-        query: { tab: activeTabId, isDesignation: isDesignationQuery },
-      },
-      undefined,
-      { shallow: true }
-    );
-  };
 
   const renderContent = (activeTabId: string) => {
     switch (activeTabId) {
