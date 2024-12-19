@@ -1,17 +1,18 @@
 import { AppBar, Empty, Layout, Text, theme } from '@daengle/design-system';
-import { DefaultImage, DetailCall, DetailLocation, DetailTime } from '@daengle/design-system/icons';
+import { DetailCall, DetailLocation, DetailTime } from '@daengle/design-system/icons';
 import { ShopDefaultImage } from '@daengle/design-system/images';
 import { css } from '@emotion/react';
 import { useRouter } from 'next/router';
 import ProfileCard from '~/components/groomers/profile-card';
 import { DAY_OFF, ROUTES } from '~/constants';
-import { useGetUserShopDetailQuery } from '~/queries';
+import { GetUserShopDetailResponse } from '~/models';
 
-export default function ShopInfo() {
+interface Props {
+  shopInfo: GetUserShopDetailResponse;
+}
+
+export default function ShopInfo({ shopInfo }: Props) {
   const router = useRouter();
-  const getShopId = router.query.shopId;
-
-  const { data: shopInfo } = useGetUserShopDetailQuery({ shopId: Number(getShopId) });
 
   const handleCardClick = (id: number) => {
     router.push(ROUTES.GROOMERS_DETAIL(id));
@@ -40,10 +41,10 @@ export default function ShopInfo() {
                 <DetailTime width={20} />
                 <Text typo="body9">
                   {shopInfo?.closedDay?.length
-                    ? `${shopInfo?.startTime.substring(0, 5)} - ${shopInfo?.endTime.substring(0, 5)} ${shopInfo?.closedDay
+                    ? `${shopInfo?.startTime?.substring(0, 5)} - ${shopInfo?.endTime?.substring(0, 5)} ${shopInfo?.closedDay
                         .map((day) => DAY_OFF.find((item) => item.value === day)?.label || day)
                         .join(', ')} 휴무`
-                    : `매일 ${shopInfo?.startTime.substring(0, 5)} - ${shopInfo?.endTime.substring(0, 5)}`}
+                    : `매일 ${shopInfo?.startTime?.substring(0, 5)} - ${shopInfo?.endTime?.substring(0, 5)}`}
                 </Text>
               </div>
 
@@ -96,6 +97,18 @@ export default function ShopInfo() {
       </div>
     </Layout>
   );
+}
+
+export async function getServerSideProps(context: any) {
+  const { shopId } = context.params;
+  const res = await fetch(`${process.env.API_URL}/user/shop/${shopId}`);
+  const shopInfo = await res.json();
+
+  return {
+    props: {
+      shopInfo: shopInfo.response,
+    },
+  };
 }
 
 const wrapper = css`

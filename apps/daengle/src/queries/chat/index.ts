@@ -47,10 +47,16 @@ export const useDeleteChatDeleteMutation = () => {
   });
 };
 
-export const useGetChatStartQuery = (params: GetchatStartRequestParams) => {
+export const useGetChatStartQuery = ({
+  params,
+  enable,
+}: {
+  params: GetchatStartRequestParams;
+  enable: boolean;
+}) => {
   return useQuery({
     queryKey: QUERY_KEYS.GET_CHAT_START,
     queryFn: () => getChatStart(params),
-    enabled: !!params.otherId,
+    enabled: !!params.otherId && enable,
   });
 };

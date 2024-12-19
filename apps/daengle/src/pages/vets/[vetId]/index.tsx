@@ -14,13 +14,23 @@ import {
 } from '@daengle/design-system/icons';
 import { DAY_OFF, ROUTES } from '~/constants';
 import { useGetChatStartQuery, useGetUserVetDetailQuery } from '~/queries';
+import { useState } from 'react';
+import { GetUserVetDetailResponse } from '~/models';
 
-export default function VetInfo() {
+interface Props {
+  vetInfo: GetUserVetDetailResponse;
+}
+
+export default function VetInfo({ vetInfo }: Props) {
   const router = useRouter();
-  const { vetId } = router.query;
 
-  const { data: vetInfo } = useGetUserVetDetailQuery({ vetId: Number(vetId) });
-  const { data: chatStartInfo } = useGetChatStartQuery({ otherId: Number(vetId) });
+  console.log(vetInfo);
+  const [isStartChat, setIsStartChat] = useState<boolean>(false);
+
+  const { data: chatStartInfo } = useGetChatStartQuery({
+    params: { otherId: Number(vetInfo.vetAccountId) },
+    enable: isStartChat,
+  });
 
   return (
     <Layout isAppBarExist={false}>
@@ -56,10 +66,10 @@ export default function VetInfo() {
                 <DetailTime width={20} />
                 <Text typo="body9">
                   {vetInfo?.closedDay
-                    ? `${vetInfo?.startTime.substring(0, 5)} - ${vetInfo?.endTime.substring(0, 5)} ${vetInfo.closedDay
+                    ? `${vetInfo?.startTime?.substring(0, 5)} - ${vetInfo?.endTime?.substring(0, 5)} ${vetInfo?.closedDay
                         .map((day) => DAY_OFF.find((item) => item.value === day)?.label || day)
                         .join(', ')} 휴무`
-                    : `매일 ${vetInfo?.startTime.substring(0, 5)} - ${vetInfo?.endTime.substring(0, 5)}`}
+                    : `매일 ${vetInfo?.startTime?.substring(0, 5)} - ${vetInfo?.endTime?.substring(0, 5)}`}
                 </Text>
               </div>
               <div css={call}>
@@ -103,20 +113,22 @@ export default function VetInfo() {
             <div css={button}>
               <RoundButton
                 fullWidth={true}
-                onClick={() => router.push(ROUTES.ESTIMATES_VET(Number(vetId)))}
+                onClick={() => router.push(ROUTES.ESTIMATES_VET(vetInfo.vetAccountId))}
               >
                 바로 예약
               </RoundButton>
               <RoundButton
                 fullWidth={true}
                 variant="primaryLow"
-                onClick={() =>
+                onClick={() => {
+                  setIsStartChat(true);
+
                   chatStartInfo?.chatRoomId &&
-                  router.push({
-                    pathname: ROUTES.CHATS_DETAIL(chatStartInfo?.chatRoomId),
-                    query: { otherId: Number(vetId), service: 'vet' },
-                  })
-                }
+                    router.push({
+                      pathname: ROUTES.CHATS_DETAIL(chatStartInfo?.chatRoomId),
+                      query: { otherId: vetInfo.vetAccountId, service: 'vet' },
+                    });
+                }}
               >
                 채팅하기
               </RoundButton>
@@ -127,8 +139,8 @@ export default function VetInfo() {
               css={menu}
               onClick={() =>
                 router.push({
-                  pathname: ROUTES.VETS_REVIEWS(Number(vetId)),
-                  query: { otherId: Number(vetId), service: 'vet' },
+                  pathname: ROUTES.VETS_REVIEWS(vetInfo.vetAccountId),
+                  query: { otherId: vetInfo.vetAccountId, service: 'vet' },
                 })
               }
             >
@@ -143,6 +155,18 @@ export default function VetInfo() {
       </div>
     </Layout>
   );
+}
+
+export async function getServerSideProps(context: any) {
+  const { vetId } = context.params;
+  const res = await fetch(`${process.env.API_URL}/user/vet/${vetId}`);
+  const vetInfo = await res.json();
+
+  return {
+    props: {
+      vetInfo: vetInfo.response,
+    },
+  };
 }
 
 const wrapper = css`

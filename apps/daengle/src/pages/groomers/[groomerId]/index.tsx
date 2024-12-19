@@ -9,6 +9,7 @@ import {
 import { css } from '@emotion/react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { ROUTES } from '~/constants/commons';
 import { GetUserGroomerDetailRequestParams } from '~/models';
 import { useGetChatStartQuery, useGetUserGroomerDetailQuery } from '~/queries';
@@ -19,8 +20,13 @@ export default function GroomerInfo() {
   const getGroomerId = Number(groomerId);
   const groomerParams: GetUserGroomerDetailRequestParams = { groomerId: getGroomerId };
 
+  const [isStartChat, setIsStartChat] = useState<boolean>(false);
+
   const { data: groomerDetail } = useGetUserGroomerDetailQuery(groomerParams);
-  const { data: chatStartInfo } = useGetChatStartQuery({ otherId: Number(groomerId) });
+  const { data: chatStartInfo } = useGetChatStartQuery({
+    params: { otherId: getGroomerId },
+    enable: isStartChat,
+  });
 
   return (
     <Layout>
@@ -97,12 +103,13 @@ export default function GroomerInfo() {
           </RoundButton>
           <RoundButton
             fullWidth={true}
-            onClick={() =>
+            onClick={() => {
+              setIsStartChat(true);
               router.push({
                 pathname: ROUTES.CHATS_DETAIL(chatStartInfo?.chatRoomId!),
                 query: { otherId: Number(groomerId), service: 'groomer' },
-              })
-            }
+              });
+            }}
             variant="primaryLow"
           >
             채팅하기
