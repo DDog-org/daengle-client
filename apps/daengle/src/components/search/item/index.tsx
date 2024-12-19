@@ -10,12 +10,12 @@ interface Props {
   partnerImage: string;
   partnerName: string;
   badges: string[];
-  onClick: (id: number) => void;
+  onClick: (partnerId: number) => void;
 }
 
 export function Item({ partnerId, partnerImage, partnerName, badges, onClick }: Props) {
   return (
-    <div css={wrapper}>
+    <div css={wrapper} onClick={() => onClick(partnerId)}>
       {!partnerId ? (
         <>
           <DefaultProfile width={170} height={200} css={imageStyle} />

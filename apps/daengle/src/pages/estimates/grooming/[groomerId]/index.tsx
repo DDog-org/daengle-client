@@ -27,8 +27,7 @@ export default function EstimateCreate() {
   const [requirements, setRequirements] = useState<string>('');
   const [ButtonActive, setButtonActive] = useState<boolean>(false);
 
-  const { id } = router.query;
-  const groomerId = Number(id);
+  const groomerId = Number(router.query.groomerId);
 
   const reservedDate = `${selectedDate?.format('YYYY-MM-DD')} ${selectedTime?.format('HH:mm:ss')}`;
 

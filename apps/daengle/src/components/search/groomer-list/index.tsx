@@ -31,8 +31,9 @@ export function GroomerList({ inputValue }: GroomerListProps) {
 
   const { address } = useAddressStore();
 
-  const handleCardClick = (id: number) => {
-    router.push(ROUTES.GROOMERS_DETAIL(id));
+  const handleCardClick = (groomerId: number) => {
+    console.log(groomerId);
+    router.push(ROUTES.GROOMERS_DETAIL(groomerId));
   };
 
   const handleTagClick = (tagValue: string) => {
@@ -68,8 +69,8 @@ export function GroomerList({ inputValue }: GroomerListProps) {
                     badges={groomingBadges
                       .map((tag) => GROOMER_SEARCH_TAG[tag])
                       .filter((tag): tag is string => !!tag)}
-                    onClick={() => {
-                      handleCardClick(partnerId);
+                    onClick={(partnerId: number) => {
+                      router.push(ROUTES.GROOMERS_DETAIL(partnerId));
                     }}
                   />
                 </div>
