@@ -21,14 +21,11 @@
 <br/>
 
 ## 서비스 소개
-
-![01](https://github.com/user-attachments/assets/a460ecf2-beb1-43a6-86e2-cce80b37f9d5)
+![01](https://github.com/user-attachments/assets/d38ea16f-c446-4cd3-9c5b-6a3ef983205b)
 ![02](https://github.com/user-attachments/assets/405668bb-b638-416d-a610-6f06b7f6b7ba)
 ![03](https://github.com/user-attachments/assets/3f2f71cd-cdc2-4261-9e1e-50c240d79219)
-![04](https://github.com/user-attachments/assets/dd3545ad-ba1b-488f-a416-11ab7d7cc5e1)
 ![05](https://github.com/user-attachments/assets/aa64e0e3-3107-4c4c-846e-bf6fc953677f)
 ![06](https://github.com/user-attachments/assets/215adfd0-3623-4440-aa50-a6dc5327e213)
-![07](https://github.com/user-attachments/assets/39b97ef3-0a79-4cfe-88b1-87d2c5242bc9)
 ![09](https://github.com/user-attachments/assets/77c0d79c-b9c0-4a28-ba8f-ff0b39f804ff)
 ![10](https://github.com/user-attachments/assets/ef7ab907-a5aa-45ae-b165-fd099af99dba)
 ![11](https://github.com/user-attachments/assets/c511b039-6315-485a-98dc-98c687593d51)
@@ -80,7 +77,8 @@
 - 마음에 드는 곳을 선택하여 견적서를 전송할 수 있습니다.
 - 미용샵 또는 병원 이름을 키워드로 검색할 수 있습니다.
 
-![Slide 16_9 - 7](https://github.com/user-attachments/assets/8c5a3a89-2200-49bb-baf5-8940db93db45)
+![Slide 16_9 - 7](https://github.com/user-attachments/assets/980269b6-52f6-4a8d-9c76-7dde591d20ad)
+
 
 
 ### 미용샵 / 병원 상세 조회
