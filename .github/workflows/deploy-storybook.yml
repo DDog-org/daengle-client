@@ -3,7 +3,7 @@ name: 🚀 Deploy Storybook to S3 and CloudFront
 on:
   push:
     branches:
-      - develop
+      - storybook
 
 jobs:
   deploy:
