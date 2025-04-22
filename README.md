@@ -201,9 +201,8 @@
 
 ## 협업 과정
 
-- [프론트엔드 컨벤션](https://github.com/DDog-org/daengle-client/wiki/Frontend-Convention)
+- [프론트엔드 컨벤션]([https://github.com/DDog-org/daengle-client/wiki/Frontend-Convention](https://github.com/DDog-org/daengle-client/wiki/Daengle-Frontend-Convention))
 - [Git 컨벤션](https://github.com/DDog-org/daengle-client/wiki/Git-Convention)
-- [Storybook 사용법](https://github.com/DDog-org/daengle-client/wiki/Storybook-%EC%82%AC%EC%9A%A9%EB%B2%95)
 
 <br/>
 <br/>
