@@ -84,6 +84,7 @@
 ### 미용샵 / 병원 상세 조회
 
 - 미용샵 또는 병원의 상세 정보를 조회할 수 있습니다.
+
 ![Slide 16_9 - 9](https://github.com/user-attachments/assets/6f179474-d51b-43a0-8070-1fc60c446ebc)
 
 
@@ -125,6 +126,7 @@
 ### 결제 및 내역 관리
 
 - 사용자는 결제 내역과 상세 내역을 확인할 수 있습니다.
+
 ![결제 내역   결제 상세 내역(미용사)](https://github.com/user-attachments/assets/79c984ab-f84a-4ffa-9d4c-c88e7889720c)
 ![결제 내역   결제 상세 내역(병원)](https://github.com/user-attachments/assets/d803cbf3-b995-4f9b-981e-3b587fd5bfc6)
 
@@ -156,6 +158,7 @@
 ### 프로필 관리
 
 - 미용사와 병원은 상세 정보를 등록하거나 수정할 수 있습니다.
+
 ![미용사 - 병원 프로필 관리](https://github.com/user-attachments/assets/75a8d536-3243-44de-b67e-04846423e0f2)
 ![마이샵 관리](https://github.com/user-attachments/assets/d8557d47-a748-4c79-b8d2-154a00162998)
 
@@ -164,7 +167,6 @@
 
 - 미용사와 병원은 받은 리뷰 목록을 조회할 수 있습니다.
 - 받은 리뷰 목록에서 리뷰를 선택해 신고할 수 있습니다.
-
 
 ![Slide 16_9 - 11](https://github.com/user-attachments/assets/8c71a959-b83a-4865-8250-5a920f904232)
 
