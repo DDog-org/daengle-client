@@ -178,6 +178,8 @@
 
 ![병원](https://github.com/user-attachments/assets/62d507e1-c539-4919-abdc-2ae985a0b917)
 
+<br/>
+<br/>
 
 ## 기술 스택
 
@@ -187,15 +189,24 @@
 - Zustand, Tanstack-query
 - Storybook
 
+<br/>
+<br/>
+
 ## 프론트엔드 아키텍처
 
-[](https://github.com/user-attachments/assets/ca7cec93-cc50-47dd-88e9-1ad00e1b4303)
+![daengle_frontend_architecture](https://github.com/user-attachments/assets/ca7cec93-cc50-47dd-88e9-1ad00e1b4303)
+
+<br/>
+<br/>
 
 ## 협업 과정
 
 - [프론트엔드 컨벤션](https://github.com/DDog-org/daengle-client/wiki/Frontend-Convention)
 - [Git 컨벤션](https://github.com/DDog-org/daengle-client/wiki/Git-Convention)
 - [Storybook 사용법](https://github.com/DDog-org/daengle-client/wiki/Storybook-%EC%82%AC%EC%9A%A9%EB%B2%95)
+
+<br/>
+<br/>
 
 ## 프로젝트 구조
 
@@ -219,6 +230,9 @@
 └── turbo.json
 ```
 
+<br/>
+<br/>
+
 ## 패키지 설명
 
 - `apps/daengle` 일반 사용자들이 이용하는 서비스입니다.
@@ -229,6 +243,9 @@
 - `packages/core/stylelint-config` 프로젝트 공통으로 사용되는 Stylelint 설정 관련 패키지입니다.
 - `packages/core/typescript-config` 프로젝트 공통으로 사용되는 TypeScript 설정 관련 패키지입니다.
 - `packages/services` 프로젝트 공통으로 사용되는 서비스 코드를 모아놓은 패키지입니다.
+
+<br/>
+<br/>
 
 ## 로컬 실행 방법
 
@@ -260,8 +277,11 @@
     pnpm vet
     ```
 
+<br/>
+<br/>
+
 ## 프론트엔드 팀원 정보
 
-| <img src="[https://avatars.githubusercontent.com/u/79887293?v=4](https://avatars.githubusercontent.com/u/79887293?v=4)" width=150px> | <img src="[https://avatars.githubusercontent.com/u/46440436?v=4](https://avatars.githubusercontent.com/u/46440436?v=4)" width=150px> | <img src="[https://avatars.githubusercontent.com/u/98331998?v=4](https://avatars.githubusercontent.com/u/98331998?v=4)" width=150px> | <img src="[https://avatars.githubusercontent.com/u/96318529?v=4](https://avatars.githubusercontent.com/u/96318529?v=4)" width=150px> |
-| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| [김주현](https://github.com/corinthionia)                                                                                            | [고윤정](https://github.com/jejukyj)                                                                                                 | [김윤일](https://github.com/kyoul10121)                                                                                              | [문소연](https://github.com/MOONProd)                                                                                                |
+| <img src="https://avatars.githubusercontent.com/u/79887293?v=4" width=150px> | <img src="https://avatars.githubusercontent.com/u/46440436?v=4" width=150px> | <img src="https://avatars.githubusercontent.com/u/98331998?v=4" width=150px> | <img src="https://avatars.githubusercontent.com/u/96318529?v=4" width=150px> |
+| :--------------------------------------------------------------------------: | :--------------------------------------------------------------------------: | :--------------------------------------------------------------------------: | :--------------------------------------------------------------------------: |
+|                  [김주현](https://github.com/corinthionia)                   |                     [고윤정](https://github.com/jejukyj)                     |                   [김윤일](https://github.com/kyoul10121)                    |                    [문소연](https://github.com/MOONProd)                     |
