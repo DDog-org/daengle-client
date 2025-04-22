@@ -1,12 +1,13 @@
 # 🐶 댕글 🐾
 
-> LG 유플러스 유레카 SW 교육과정 1기 최종 융합 프로젝트 최우수상 수상 🏆
+> LG 유플러스 유레카 SW 교육과정 1기 최종 융합 프로젝트 최우수상 🏆 수상 
 
-[](https://github.com/user-attachments/assets/02a1beaa-e38c-4287-b13a-42faef2ac270)
+![Header](https://github.com/user-attachments/assets/02a1beaa-e38c-4287-b13a-42faef2ac270)
 
-댕글 🐾 은 반려견을 위한 견적 매칭 플랫폼입니다.
-
+댕글 🐾 은 반려견을 위한 견적 매칭 플랫폼입니다.  
 반려견 미용 서비스✂️ 와 동물병원🏥 가격비교 및 예약 서비스를 제공합니다.
+
+<br/>
 
 ## 서비스 이용해 보기 🔗
 
@@ -15,13 +16,17 @@
 | 🐾 일반 사용자 | [www.daengle.com](http://www.daengle.com/) (서비스 종료)                               |
 | ✂️ 미용사      | [https://groomer.daengle.com](https://groomer.daengle.com/) (서비스 종료)              |
 | 🏥 동물병원    | [https://vet.daengle.com](https://vet.daengle.com/) (서비스 종료)                      |
-| 📖 Storybook   | [https://DDog-org.github.io/daengle-client](https://DDog-org.github.io/daengle-client) |
+| 📖 Storybook   | [https://ddog-org.github.io/daengle-client](https://ddog-org.github.io/daengle-client) |
+
+<br/>
 
 ## 서비스 소개
 
 기획 발표자료
 
-## 댕글 주요 기능
+<br/>
+
+## Daengle 주요 기능
 
 ### 로그인 및 회원가입(온보딩)
 
@@ -30,22 +35,34 @@
 - 온보딩 시 사용자의 기본적인 정보와 반려견 프로필을 등록합니다.
 - 유효성 검사를 통해 올바른 형식의 정보를 입력했는지 확인할 수 있습니다.
 
+![01 로그인 및 회원가입(온보딩)](https://github.com/user-attachments/assets/8313e77a-db1f-403a-a1e2-4b700c90b641)
+![02 로그인 및 회원가입(온보딩)](https://github.com/user-attachments/assets/f90d6b68-6591-4fe4-8e5c-98145a4b5321)
+
+
 ### 사용자 및 반려견 프로필 관리
 
 - 사용자의 닉네임을 변경할 수 있습니다.
 - 반려견의 프로필을 등록 / 수정 / 삭제 할 수 있습니다.
 - 반려견의 탄생년도, 성별, 중성화 여부, 품종, 몸무게, 특이사항 등을 입력하여 편리하게 견적서를 작성할 수 있습니다.
 
+![03 사용자 및 반려견 프로필 관리](https://github.com/user-attachments/assets/1aad8878-5625-4f3a-91ab-cc41c134e67a)
+
 ### 견적서 작성 및 요청
 
 - 사용자는 등록한 반려견의 프로필을 통해 견적서를 작성할 수 있습니다.
 - 희망 예약 날짜 및 시간, 원하는 미용 스타일 또는 증상을 입력하여 견적서를 요청할 수 있습니다.
+
+![견적서 작성 및 요청](https://github.com/user-attachments/assets/f847e265-fe57-4486-90ab-1f8ca493738b)
+
 
 ### 견적서 조회 및 카카오톡 알림 기능
 
 - 새로운 견적서를 받은 경우 카카오톡 알림을 받을 수 있습니다.
 - 받은 견적서 목록을 확인할 수 있습니다.
 - 상세 내용을 확인할 수 있습니다.
+  
+![04 견적서 조회 및 요청](https://github.com/user-attachments/assets/062447e5-dddd-4651-8304-1806d74c31e1)
+
 
 ### 미용샵 / 병원 목록 조회 및 검색
 
@@ -53,21 +70,39 @@
 - 마음에 드는 곳을 선택하여 견적서를 전송할 수 있습니다.
 - 미용샵 또는 병원 이름을 키워드로 검색할 수 있습니다.
 
+![Slide 16_9 - 7](https://github.com/user-attachments/assets/8c5a3a89-2200-49bb-baf5-8940db93db45)
+
+
 ### 미용샵 / 병원 상세 조회
 
 - 미용샵 또는 병원의 상세 정보를 조회할 수 있습니다.
+![Slide 16_9 - 9](https://github.com/user-attachments/assets/6f179474-d51b-43a0-8070-1fc60c446ebc)
+
+
 
 ### 예약금 결제 & 예약 확정
 
 - 여러 견적서를 확인하고 예약을 진행할 수 있습니다.
 - 예약 일시와 금액, 예약자 정보를 확인한 후 포트원 모듈을 통해 실제 결제를 진행할 수 있습니다.
 
+![예약금 결제   예약 확정](https://github.com/user-attachments/assets/9f23f519-abd8-48a7-9c65-ff3470b6857e)
+
+
+
 ### 예약 내역 조회 및 상세 조회
 
 - 사용자는 미용샵 및 병원 예약 내역을 조회할 수 있습니다.
 - 각 예약의 상세 내용 및 견적서를 확인할 수 있습니다.
 
+![예약 내역 조회 및 상세 조회](https://github.com/user-attachments/assets/52b0adf3-c3fe-4aac-bd1a-bd90a482d819)
+
+
 ### 1:1 채팅
+- 원하는 미용사 및 병원과 1:1 채팅을 진행할 수 있습니다.
+- 지정 예약시 예약 관련 내용을 직접 논의할 수 있습니다.
+
+![채팅](https://github.com/user-attachments/assets/b8b3646f-6366-48a6-b122-eee70f054dbf)
+
 
 ### 리뷰 관리
 
@@ -76,9 +111,18 @@
 - 사용자는 자신이 작성한 리뷰 목록을 조회할 수 있습니다.
 - 기존에 작성한 리뷰를 수정하거나 삭제할 수 있습니다.
 
+![샵or병원 받은 리뷰 조회   리뷰 등록](https://github.com/user-attachments/assets/269e9424-1955-416e-8184-9030d061f33e)
+![내가 쓴 리뷰 관리   리뷰 수정](https://github.com/user-attachments/assets/096065d5-7068-4f7f-aac8-876fb18aedb4)
+
 ### 결제 및 내역 관리
 
 - 사용자는 결제 내역과 상세 내역을 확인할 수 있습니다.
+![결제 내역   결제 상세 내역(미용사)](https://github.com/user-attachments/assets/79c984ab-f84a-4ffa-9d4c-c88e7889720c)
+![결제 내역   결제 상세 내역(병원)](https://github.com/user-attachments/assets/d803cbf3-b995-4f9b-981e-3b587fd5bfc6)
+
+
+<br />
+<br />
 
 ## 미용샵 / 병원 주요 기능
 
@@ -89,25 +133,41 @@
 - 병원은 병원명, 병원 위치, 전화번호를 입력하고 사업자등록증 또는 근로소득증명서를 첨부하여 가입 승인을 기다립니다.
 - 가입 승인 후 서비스를 이용할 수 있습니다.
 
+![Slide 16_9 - 10](https://github.com/user-attachments/assets/4922938e-6c0b-47d1-ab1c-22d3d76d2f87)
+
+
 ### 받은 견적서 목록 조회 및 상세 조회
 
 - 미용사 및 병원은 전체 견적서와 지정 견적서로 나누어 견적서 목록을 조회할 수 있습니다.
 - 전체 견적서 탭에서는 동네 기반으로 작성된 견적서 목록을 조회할 수 있습니다.
 - 지정 견적서 탭에서는 본인에게 지정된 견적서 목록을 조회할 수 있습니다.
 
+![병원](https://github.com/user-attachments/assets/445a3b1b-3e08-41b5-935a-5e6d9559ab46)
+
+
 ### 프로필 관리
 
 - 미용사와 병원은 상세 정보를 등록하거나 수정할 수 있습니다.
+![미용사 - 병원 프로필 관리](https://github.com/user-attachments/assets/75a8d536-3243-44de-b67e-04846423e0f2)
+![마이샵 관리](https://github.com/user-attachments/assets/d8557d47-a748-4c79-b8d2-154a00162998)
+
 
 ### 리뷰 관리
 
-- 사용자는 결제 상세 내역 페이지에서 ‘리뷰 남기기’ 버튼을 통해 리뷰를 작성할 수 있습니다.
-- 내가 쓴 리뷰 페이지에서 리뷰를 조회하고 수정하거나 삭제할 수 있습니다.
+- 미용사와 병원은 받은 리뷰 목록을 조회할 수 있습니다.
+- 받은 리뷰 목록에서 리뷰를 선택해 신고할 수 있습니다.
+
+
+![Slide 16_9 - 11](https://github.com/user-attachments/assets/8c71a959-b83a-4865-8250-5a920f904232)
+
 
 ### 예약 관리
 
 - 하단의 예약 탭에서 날짜별 예약 목록을 확인할 수 있습니다.
 - 예약 상세 내역 및 견적서 상세 내용을 확인할 수 있습니다.
+
+![병원](https://github.com/user-attachments/assets/62d507e1-c539-4919-abdc-2ae985a0b917)
+
 
 ## 기술 스택
 
