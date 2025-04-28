@@ -30,9 +30,9 @@
   "dependencies": {
     "@emotion/react": "^11.13.5",
     "framer-motion": "^11.11.17",
+    "next": "14.2.28",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "next": "14.2.10"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@daengle/eslint-config": "workspace:*",
